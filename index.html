@@ -9,6 +9,12 @@
   <!-- <script src="https://kit.fontawesome.com/2d7e3b5c22.js" crossorigin="anonymous"></script> -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+   <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body>
   <!-- Header -->
@@ -21,6 +27,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#rooms">Rooms</a></li>
           <li><a href="#amenity">Amenity</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <a href="#" class="btn book-btn">Book Now</a>
@@ -38,6 +46,38 @@
     </div>
     </div>
   </header>
+
+  <!-- Banner Section -->
+<section id="banner" class="banner">
+  <div class="banner-inner">
+    <!-- Left Image -->
+    <div class="banner-image">
+      <img src="img/relax.jpg" alt="Hotel View">
+      <div class="leaf-shadow"></div>
+    </div>
+
+    <!-- Right Form Content -->
+    <div class="banner-content">
+      <h2>Send Us a Query</h2>
+      <form id="queryForm" class="query-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="phone" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
   <!-- Hero Section -->
  <section id="hero" class="hero">
@@ -147,6 +187,66 @@
   </div>
 </section>
 
+<!-- Gallery 3D Wheel -->
+
+<section id="gallery" class="gallery-section">
+  <h2 class="section-title">Gallery</h2>
+  <div class="slider" id="simpleSlider">
+    <div class="slides">
+      <div class="slide active"><img src="img/candles1.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="img/candles3.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="img/pool.jpg" alt="Image 3"></div>
+      <div class="slide"><img src="img/bath_tub2.jpg" alt="Image 4"></div>
+      <div class="slide"><img src="img/candles2.jpg" alt="Image 5"></div>
+      <div class="slide"><img src="img/relax.jpg" alt="Image 6"></div>
+    </div>
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer id="contact" class="footer">
+  <div class="footer-inner">
+    <!-- Left: Hotel Info -->
+    <div class="footer-about">
+      <h3>Shivoham Retreat</h3>
+      <p>
+        Nestled in the lap of nature, Shivoham Retreat offers you the perfect
+        getaway with comfort, luxury, and serenity.
+      </p>
+    </div>
+
+    <!-- Middle: Contact Details -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><strong>Address:</strong> 123 Paradise Road, Rishikesh, India</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Email:</strong> info@shivohamretreat.com</p>
+    </div>
+
+    <!-- Right: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#banner">Query Form</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Shivoham Retreat. All rights reserved.</p>
+  </div>
+</footer>
+
 <!-- Booking Form Modal -->
 <div id="bookingModal" class="modal">
   <div class="modal-content">
@@ -205,6 +305,5 @@
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

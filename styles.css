@@ -82,6 +82,122 @@ header .container {
   color: #d4af37;
 }
 
+/* Banner Section */
+.banner {
+  padding: 4rem 2rem;
+  background: #004d40;
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.amenity-image2 {
+  margin-left: 0px;
+  position: relative;
+  width: 70%;
+  height: 350px; /* adjust height as needed */
+  overflow: hidden;
+  /* border-top-left-radius: 50% 40%; */
+  border-top-right-radius: 40% 60%;
+  border-bottom-right-radius: 40% 60%;
+}
+
+.amenity-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Image Side */
+.banner-image {
+  margin-left: 0px;
+  position: relative;
+  width: 70%;
+  height: 350px; /* adjust height as needed */
+  overflow: hidden;
+  /* border-top-left-radius: 50% 40%; */
+  border-top-right-radius: 40% 60%;
+  border-bottom-right-radius: 40% 60%;
+  flex: 1;
+  
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  
+}
+
+.banner-image .leaf-shadow {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: url("img/leaf-shadow.png") no-repeat center/contain;
+  opacity: 0.3;
+}
+
+/* Content (Form) Side */
+.banner-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.banner-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #d4af37;
+}
+
+.query-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.query-form input,
+.query-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d4af37; /* match your theme */
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.query-form input:focus,
+.query-form textarea:focus {
+  border-color: #c08b5c; /* match your theme */
+  outline: none;
+}
+
+.query-form button {
+  margin-top: 1rem;
+  background-color: #d4af37;
+  color: #004d40;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-inner {
+    flex-direction: column;
+  }
+  .banner-image, .banner-content {
+    width: 100%;
+  }
+}
+
+
 /* ================= HERO SECTION ================= */
 .hero {
   position: relative;
@@ -554,6 +670,65 @@ header .container {
   display: block;
 }
 
+/* ===== Gallery Section ===== */
+/* Simple slider */
+.gallery-section
+{
+  height: 450px;
+  z-index: 1;  
+  margin-bottom: 100px;
+}
+
+.gallery-section h2 {
+  text-align: center;
+  color: #D4AF37;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+.slider {
+  position: relative;
+  max-width: 900px;
+  max-height: 450px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  transition: opacity 0.6s ease;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
 /* ===== Booking Modal ===== */
 .modal {
   display: none; /* Hidden by default */
@@ -719,3 +894,94 @@ header .container {
     font-size: 14px;
   }
 }
+
+/* Footer */
+.footer {
+  background: #d4af37;
+  color: #004d40;
+  padding: 3rem 2rem 1.5rem;
+  position: relative; 
+  z-index: 10;       
+  clear: both; 
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer-about,
+.footer-contact,
+.footer-links {
+  flex: 1 1 250px;
+}
+
+.footer h3, 
+.footer h4 {
+  color: #004d40;
+  margin-bottom: 1rem;
+}
+
+.footer p, 
+.footer li, 
+.footer a {
+  color: #204E45;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #204E45;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #204E45; /* theme accent */
+}
+
+.socials a {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: #204E45;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #204E45;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #204E45;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .socials {
+    margin-top: 1rem;
+  }
+}
+
