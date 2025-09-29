@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel & Spa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- <script src="https://kit.fontawesome.com/2d7e3b5c22.js" crossorigin="anonymous"></script> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">YOURLOGO</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn book-btn">Book Now</a>
+      <!-- Social CTA Buttons -->
+    <div class="navbar-social">
+      <a href="https://facebook.com" target="_blank" class="cta-btn">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="cta-btn">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/1234567890" target="_blank" class="cta-btn">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+ <section id="hero" class="hero">
+  <div class="hero-inner">
+    <!-- Left Text Content -->
+    <div class="hero-content">
+      <h1>HOTEL & SPA</h1>
+      <p class="subtitle">• Rest and Relax •</p>
+      <h3>A SPOT OF PARADISE</h3>
+      <p class="desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-outline">Book Now</a>
+        <a href="#" class="btn btn-text">Read More</a>
+      </div>
+      <!-- GOLDEN LEAF OUTLINE BELOW TEXT -->
+      <div class="leaf-outline"></div>
+    </div>
+
+    <!-- Right Image with ⊂ shape -->
+    <div class="hero-image">
+      <svg viewBox="0 0 400 400" class="clip-svg">
+        <defs>
+          <clipPath id="subsetCircle">
+            <path d="
+              M 400,0
+              L 400,400
+              L 200,400
+              A 200,200 0 1,1 200,0
+              Z
+            "/>
+          </clipPath>
+        </defs>
+        <image href="img/spa.jpg"
+               width="400"
+               height="400"
+               clip-path="url(#subsetCircle)"
+               preserveAspectRatio="xMidYMid slice"/>
+      </svg>
+      <!-- SOFT LEAF SHADOW ON IMAGE -->
+      <div class="leaf-shadow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-content">
+      <h2>KNOW ABOUT THE PROMOTIONS</h2>
+      <p>Subscribe now and get the best promotions</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <div class="about-call">
+        <button class="call-btn">Call Now at 455 6516</button>
+      </div>
+      <p class="tagline">Live the best experience</p>
+    </div>
+    <div class="about-image">
+      <img src="img/pool_side2.jpg" alt="Travel Girl">
+    </div>
+  </div>
+</section>
+<!-- Rooms Section -->
+<section id="rooms" class="rooms-section" >
+  <div class="rooms-wrapper">
+    <!-- Left Content -->
+    <div class="rooms-offer">
+      <div class="offer-circle">
+        <h3>Book your family vacation now!</h3>
+        <a href="#" class="btn-offer">Read More</a>
+        <!-- Discount Circle (inside, overlapping) -->
+        <div class="discount-circle">
+          <p>50% Off</p>
+        </div>
+      </div>
+      <!-- Offer Details below circle -->
+      <div class="package-details">
+        <h4>Flight + Hotel <br> + meals included</h4>
+        <p class="price">From <span>$149</span>/night</p>
+        <p class="small-text">*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.</p>
+      </div>
+    </div>
+    <!-- Right Image -->
+    <div class="rooms-image">
+      <img src="img/pool.jpg" alt="Vacation Room Offer">
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section">
+  <div class="gallery-item">
+    <div class="gallery-text">
+      <h2>Luxury Spa Experience</h2>
+      <p>
+        Relax and rejuvenate with our premium spa services designed to 
+        give you the perfect escape from the daily hustle.
+      </p>
+      <a href="#" class="btn btn-outline">Read More</a>
+    </div>
+    <div class="gallery-image1">
+      <img src="img/candles2.jpg" alt="Spa Room">
+    </div>
+  </div>
+
+  <div class="gallery-item reverse">
+    <div class="gallery-text">
+      <h2>Fine Dining</h2>
+      <p>
+        Taste culinary excellence with gourmet dishes crafted by 
+        world-class chefs, paired with a stunning ambiance.
+      </p>
+      <a href="#" class="btn btn-outline">Read More</a>
+    </div>
+    <div class="gallery-image2">
+      <img src="img/candles1.jpg" alt="Fine Dining">
+    </div>
+  </div>
+</section>
+
+<!-- Booking Form Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Book Your Stay</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkin">Check-in Date</label>
+        <input type="date" id="checkin" name="checkin" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkout">Check-out Date</label>
+        <input type="date" id="checkout" name="checkout" required>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Guests</label>
+        <input type="number" id="guests" name="guests" placeholder="Number of guests" min="1" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Booking</button>
+    </form>
+
+    <!-- Social Media CTA buttons -->
+    <div class="modal-social">
+      <p>Or contact us directly:</p>
+      <div class="social-buttons">
+        <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
