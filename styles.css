@@ -1,4 +1,162 @@
+/* Fix unwanted horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container, .row {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Reset */
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #d4af37;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Hide close button on desktop */
+.nav-close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+  }
+}
+
+
+/* Mobile Navigation */
+@media (max-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #004d40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .book-btn {
+    display: none; /* hide book button on smaller screens */
+  }
+
+  .navbar-social {
+    display: none; /* hide social buttons in header on mobile */
+  }
+}
+
+/* Hamburger Animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Stack image + content vertically on smaller screens */
+@media (max-width: 768px) {
+  .hero-inner,
+  .banner-inner,
+  .about-container,
+  .rooms-wrapper,
+  .amenity-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image,
+  .banner-image,
+  .about-image,
+  .rooms-image,
+  .amenity-image1,
+  .amenity-image2 {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .hero-content,
+  .banner-content,
+  .about-content,
+  .rooms-offer,
+  .amenity-text {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+.query-form,
+.subscribe-section,
+.subscribe-button {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+.query-form input,
+.query-form textarea,
+.subscribe-section input {
+  width: 100%;
+  max-width: 100%;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -382,6 +540,7 @@ header .container {
   line-height: 1.6;
 }
 
+
 .subscribe-form {
   display: flex;
   gap: 10px;
@@ -434,9 +593,19 @@ header .container {
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
+@media (max-width: 768px) {
+  .about-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+
 /* ====== ROOMS LANDING STYLE ====== */
 .rooms-section {
-  padding: 40px 0;             /* reduce padding so no scrolling */
+  padding: 40px 0;  
+  overflow: hidden;          
 }
 
 .rooms-wrapper {
@@ -470,24 +639,62 @@ header .container {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+@media (max-width: 768px) {
+  .offer-circle {
+    width: 180px;
+    height: 180px;
+    text-size-adjust: 70%;
+  }
+  .discount-circle {
+  position: absolute;
+  top: 5px;
+  right: 5px; /* keeps it inside the room card */
+  max-width: 50px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.room-card {
+  position: relative;
+  overflow: hidden;
+}
+}
+
+/* .discount-circle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 80px;  
+  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px; 
+  z-index: 10;
+} */
 .discount-circle {
   position: absolute;
-  top: 30%;                   /* higher placement */
+  top: 10%;                   /* higher placement */
   left: 100%;
+  right: 10px;
   margin-left: 20px;
   transform: translateY(-50%);
   background: #D4AF37;
   color: #fff;
   font-weight: bold;
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px; /* vertically center text inside */
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .offer-circle h3 {
@@ -598,9 +805,33 @@ header .container {
   gap: 40px;
 }
 
-.amenity-item.reverse {
+/* .amenity-item.reverse {
   flex-direction: row-reverse;
+} */
+.amenity-item.reverse {
+  display: flex;
+  flex-direction: row-reverse; /* keep the original layout */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* adds space between text and image */
 }
+
+.amenity-item.reverse .btn {
+  margin-top: 10px;
+  align-self: flex-start; /* keeps button aligned correctly */
+}
+
+@media (max-width: 768px) {
+  .amenity-item.reverse {
+    flex-direction: column-reverse; /* mobile-friendly stack */
+    text-align: center;
+  }
+  
+  .amenity-item.reverse .btn {
+    align-self: center;
+  }
+}
+
 
 .amenity-text {
   flex: 1;
@@ -885,6 +1116,7 @@ header .container {
 
 @media (max-width: 768px) {
   .navbar-social {
+    background: #004d40;
     gap: 8px;
   }
 
@@ -985,3 +1217,107 @@ header .container {
   }
 }
 
+/* ================= RESPONSIVENESS FIX ================= */
+
+/* Tablet & Mobile Navbar */
+@media (max-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #004d40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .book-btn,
+  .navbar-social {
+    display: none;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Navbar Fix */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%; /* Adjust width */
+    height: 100vh;
+    background: #004d40; /* or your nav background */
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 9999;
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+  }
+}
+
+
+/* Stack image & content vertically */
+@media (max-width: 768px) {
+  .hero-inner,
+  .banner-inner,
+  .about-container,
+  .rooms-wrapper,
+  .amenity-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  /* Images take full width */
+  .hero-image,
+  .banner-image,
+  .about-image,
+  .rooms-image,
+  .amenity-image1,
+  .amenity-image2 {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  /* Content centered */
+  .hero-content,
+  .banner-content,
+  .about-content,
+  .rooms-offer,
+  .amenity-text {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

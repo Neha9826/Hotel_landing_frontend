@@ -1,3 +1,35 @@
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+ document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.querySelector('.navbar-toggler'); // hamburger
+  const navMenu = document.querySelector('.navbar-collapse');  // sliding menu
+  const closeBtn = document.querySelector('.nav-close');       // close (×)
+
+  if (toggleBtn && navMenu) {
+    // Open menu
+    toggleBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      navMenu.classList.add('show');
+      document.body.style.overflow = "hidden"; // disable background scroll when menu open
+    });
+  }
+
+  if (closeBtn && navMenu) {
+    // Close menu
+    closeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      navMenu.classList.remove('show');
+      document.body.style.overflow = ""; // restore scroll
+    });
+  }
+});
+
 // Smooth scroll for all nav links
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -5,9 +37,23 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+      nav.classList.remove('active');
+      hamburger.classList.remove('active'); // Close menu on click
     }
   });
 });
+
+
+// // Smooth scroll for all nav links
+// document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const target = document.querySelector(this.getAttribute('href'));
+//     if (target) {
+//       target.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   });
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
   const queryForm = document.getElementById("queryForm");
