@@ -10,10 +10,23 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
    <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- AOS (animate on scroll) -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Swiper (gallery slider) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+
+<!-- Optional: font if you want (keeps design consistent) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Your new animations CSS (place AFTER your main CSS so it can override safely) -->
+<link rel="stylesheet" href="css/animations.css">
+
 
 </head>
 <body>
@@ -60,12 +73,18 @@
   </div>
 </header>
 
+<!-- Butterfly Animation Container -->
+<div class="butterflies"></div>
+
   <!-- Banner Section -->
 <section id="banner" class="banner">
   <div class="banner-inner">
     <!-- Left Image -->
     <div class="banner-image">
-      <img src="img/balcony-back.JPG" alt="Hotel View">
+      <!-- <img src="img/balcony-back.JPG" alt="Hotel View"> -->
+      <video autoplay muted loop playsinline preload="auto" poster="vid/waterfall.mp4">
+          <source src="vid/mountains.mp4" type="video/mp4">
+        </video>
       <div class="leaf-shadow"></div>
     </div>
 
@@ -113,10 +132,16 @@
 
     <!-- Right Image with ⊂ shape -->
     <div class="hero-image">
-      <img src="img/balcony-front.JPG" alt="Hotel Pool Side">
+      <div class="slideshow">
+        <img src="img/balcony-front.JPG" alt="Hotel Pool Side" class="active">
+        <img src="img/balcony-back.JPG" alt="Homestay Room">
+        <img src="img/bed-balcony.JPG" alt="Mussoorie View">
+        <img src="img/entry1.JPG" alt="Garden">
+      </div>
       <!-- SOFT LEAF SHADOW ON IMAGE -->
       <div class="leaf-shadow"></div>
     </div>
+
   </div>
 </section>
 
@@ -180,7 +205,7 @@
       <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image1">
-      <img src="img/sofa.jpg" alt="Spa Room">
+      <img src="img/yoga-chakra.png" alt="Spa Room">
     </div>
   </div>
 
@@ -193,7 +218,7 @@
       <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image2">
-      <img src="img/bath-mirror.jpg" alt="Fine Dining">
+      <img src="img/food.jpg" alt="Fine Dining">
     </div>
   </div>
 </section>
@@ -224,10 +249,11 @@
       <p>
         Exquisite Yoga & Meditation Retreats: Partake in daily vinyasa flows, restorative hatha, and soul-soothing meditation sessions designed to rejuvenate both physique and psyche.
       </p>
-      <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image1">
-      <img src="img/spa.jpg" alt="Yoga Session">
+      <video autoplay muted loop playsinline preload="auto" poster="vid/yoga-poster.jpg">
+        <source src="vid/yoga1.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -237,10 +263,11 @@
       <p>
         Holistic Spiritual Enrichment: Engage in enlightening workshops, sound healings, and energy realignment therapies that nurture your inner light.
       </p>
-      <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image2">
-      <img src="img/relax.jpg" alt="Meditation Session">
+      <video autoplay muted loop playsinline preload="auto" poster="vid/meditation-poster.jpg">
+        <source src="vid/mountain-yoga.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -250,10 +277,11 @@
       <p>
         Revel in the serene surroundings that invite quiet reflection—verdant gardens, gentle streams, and panoramic mountain views.
       </p>
-      <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image1">
-      <img src="img/spa.jpg" alt="Yoga Session">
+      <video autoplay muted loop playsinline preload="auto" poster="vid/nature-poster.jpg">
+        <source src="vid/peacock.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -261,23 +289,20 @@
     <div class="amenity-text">
       <h2>Why Choose Shivoham?</h2>
       <p>
-        Bespoke Care: Tailored programmes attuned to your unique aspirations and wellness objectives.
-
-Esteemed Gurus: Seasoned instructors who embody knowledge, grace, and attentiveness.
-
-Peaceful Refuge: A sanctuary far removed from the frenetic pace of quotidian existence.
-
-Kindred Spirits: Become part of a nurturing community that celebrates shared growth and mindful living.
-
+        Bespoke Care: Tailored programmes attuned to your unique aspirations and wellness objectives.<br><br>
+        Esteemed Gurus: Seasoned instructors who embody knowledge, grace, and attentiveness.<br><br>
+        Peaceful Refuge: A sanctuary far removed from the frenetic pace of quotidian existence.<br><br>
+        Kindred Spirits: Become part of a nurturing community that celebrates shared growth and mindful living.
       </p>
-      <!-- <a href="#" class="btn btn-outline">Read More</a> -->
     </div>
     <div class="amenity-image2">
-      <img src="img/relax.jpg" alt="Meditation Session">
+      <video autoplay muted loop playsinline preload="auto" poster="vid/why-choose-poster.jpg">
+        <source src="vid/yoga2.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-  
 </section>
+
 <section id="" class="about-section">
   <div class="about-container">
     <div class="about-content">
@@ -438,5 +463,18 @@ Come, and let your spirit soar in the heart of serenity.
 </div>
 
 <script src="script.js"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<!-- Swiper -->
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Your new animations JS -->
+<script src="js/animations.js"></script>
+
 </body>
 </html>

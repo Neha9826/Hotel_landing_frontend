@@ -241,3 +241,109 @@ async function fetchGoogleReviews() {
 }
 
 fetchGoogleReviews();
+
+const container = document.querySelector('.butterflies');
+
+// Example butterfly images (replace with your corrected paths)
+const butterflies = [
+  ['img/butterfly-open1.png', 'img/butterfly-close1.png'],
+  ['img/butterfly-open2.png', 'img/butterfly-close2.png'],
+  ['img/butterfly-open3.png', 'img/butterfly-close3.png']
+];
+
+function createButterfly() {
+  const b = document.createElement('div');
+  b.classList.add('butterfly');
+
+  // Random butterfly type
+  const typeIndex = Math.floor(Math.random() * butterflies.length);
+  const [openImg, closedImg] = butterflies[typeIndex];
+  b.dataset.open = openImg;
+  b.dataset.closed = closedImg;
+  b.style.backgroundImage = `url(${openImg})`;
+
+  // Random size
+  const size = Math.random() * 30 + 40; // 40px - 70px
+  b.style.width = size + 'px';
+  b.style.height = size + 'px';
+
+  // Random spawn position along screen edges
+  const edges = ['top', 'bottom', 'left', 'right'];
+  const spawnEdge = edges[Math.floor(Math.random() * edges.length)];
+
+  let startX, startY, endX, endY;
+
+  switch (spawnEdge) {
+    case 'top':
+      startX = Math.random() * 100;
+      startY = -10;
+      endX = Math.random() * 100;
+      endY = 110;
+      break;
+    case 'bottom':
+      startX = Math.random() * 100;
+      startY = 110;
+      endX = Math.random() * 100;
+      endY = -10;
+      break;
+    case 'left':
+      startX = -10;
+      startY = Math.random() * 100;
+      endX = 110;
+      endY = Math.random() * 100;
+      break;
+    case 'right':
+      startX = 110;
+      startY = Math.random() * 100;
+      endX = -10;
+      endY = Math.random() * 100;
+      break;
+  }
+
+  b.style.left = startX + 'vw';
+  b.style.top = startY + 'vh';
+
+  container.appendChild(b);
+
+  // Wing flap
+  let flap = true;
+  const flapInterval = setInterval(() => {
+    b.style.backgroundImage = flap ? `url(${openImg})` : `url(${closedImg})`;
+    flap = !flap;
+  }, 200);
+
+  // Animate along curved path
+  const duration = Math.random() * 10 + 10; // 10-20s
+  const curveX = Math.random() * 30 - 15;
+  const curveY = Math.random() * 30 - 15;
+
+  let startTime = null;
+
+  function animate(time) {
+    if (!startTime) startTime = time;
+    const elapsed = (time - startTime) / 1000;
+    const progress = elapsed / duration;
+
+    if (progress < 1) {
+      // Linear interpolation + sine curve for natural movement
+      const x = startX + (endX - startX) * progress + Math.sin(progress * Math.PI * 2) * curveX;
+      const y = startY + (endY - startY) * progress + Math.sin(progress * Math.PI * 2) * curveY;
+      const rotation = Math.sin(progress * Math.PI * 4) * 15;
+      b.style.transform = `translate(${x - startX}vw, ${y - startY}vh) rotate(${rotation}deg)`;
+      requestAnimationFrame(animate);
+    } else {
+      clearInterval(flapInterval);
+      b.remove();
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+// Spawn 3–5 butterflies every 2-3 seconds
+setInterval(() => {
+  const count = Math.floor(Math.random() * 3) + 3;
+  for (let i = 0; i < count; i++) {
+    createButterfly();
+  }
+}, 2500);
