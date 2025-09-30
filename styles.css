@@ -652,6 +652,7 @@ header .container {
   max-width: 50px;
   max-height: 50px;
   overflow: hidden;
+  text-align: center;
 }
 
 .room-card {
