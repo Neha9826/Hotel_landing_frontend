@@ -461,6 +461,26 @@ Come, and let your spirit soar in the heart of serenity.
     </div>
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slideshow img");
+  let currentIndex = 0;
+
+  function showNextSlide() {
+    // Remove active from current
+    slides[currentIndex].classList.remove("active");
+
+    // Move to next index
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    // Add active to new image
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Change slide every 4 seconds
+  setInterval(showNextSlide, 4000);
+});
+</script>
 
 <script src="script.js"></script>
 <!-- AOS -->
