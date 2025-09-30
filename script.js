@@ -204,3 +204,40 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingForm.reset();
   });
 });
+
+
+
+async function fetchGoogleReviews() {
+  const placeId = "YOUR_PLACE_ID"; // Replace with your retreat's Google Place ID
+  const apiKey = "YOUR_GOOGLE_API_KEY"; // Replace with your API key
+
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.result && data.result.reviews) {
+      const reviewsContainer = document.querySelector('.reviews-container');
+      reviewsContainer.innerHTML = ''; // Clear placeholder reviews
+
+      data.result.reviews.forEach(review => {
+        const stars = '★'.repeat(Math.floor(review.rating)) + '☆'.repeat(5 - Math.floor(review.rating));
+
+        const reviewCard = `
+          <div class="review-card">
+            <h3 class="reviewer-name">${review.author_name}</h3>
+            <div class="review-rating">${stars}</div>
+            <p class="review-text">"${review.text.substring(0, 150)}..."</p>
+          </div>
+        `;
+
+        reviewsContainer.insertAdjacentHTML('beforeend', reviewCard);
+      });
+    }
+  } catch (error) {
+    console.error("Error fetching reviews:", error);
+  }
+}
+
+fetchGoogleReviews();
