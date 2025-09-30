@@ -7,25 +7,23 @@ hamburger.addEventListener('click', () => {
 });
 
  document.addEventListener("DOMContentLoaded", function () {
-  const toggleBtn = document.querySelector('.navbar-toggler'); // hamburger
-  const navMenu = document.querySelector('.navbar-collapse');  // sliding menu
-  const closeBtn = document.querySelector('.nav-close');       // close (×)
+  const toggleBtn = document.querySelector('.navbar-toggler'); 
+  const navMenu = document.querySelector('.navbar-collapse');  
+  const closeBtn = document.querySelector('.nav-close');       
 
   if (toggleBtn && navMenu) {
-    // Open menu
     toggleBtn.addEventListener('click', function (e) {
       e.preventDefault();
       navMenu.classList.add('show');
-      document.body.style.overflow = "hidden"; // disable background scroll when menu open
+      document.body.style.overflow = "hidden"; // prevent background scroll
     });
   }
 
   if (closeBtn && navMenu) {
-    // Close menu
     closeBtn.addEventListener('click', function (e) {
       e.preventDefault();
       navMenu.classList.remove('show');
-      document.body.style.overflow = ""; // restore scroll
+      document.body.style.overflow = ""; // restore background scroll
     });
   }
 });

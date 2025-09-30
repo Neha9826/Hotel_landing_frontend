@@ -960,6 +960,12 @@ header .container {
 .slider-btn.prev { left: 10px; }
 .slider-btn.next { right: 10px; }
 
+/* ===== Yoga Section ===== */
+.yoga-section {
+  background: #004d40; /* deep green for yoga theme */
+}
+
+
 /* ===== Booking Modal ===== */
 .modal {
   display: none; /* Hidden by default */
@@ -1319,5 +1325,34 @@ header .container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #000; /* or your theme color */
+    transition: right 0.3s ease-in-out;
+    z-index: 9999;
+    padding: 20px;
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+  }
+
+  .nav-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    z-index: 10001;
   }
 }
