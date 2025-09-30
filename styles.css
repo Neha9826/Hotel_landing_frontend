@@ -661,43 +661,6 @@ header .container {
 }
 }
 
-/* .discount-circle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 80px;  
-  height: 80px;
-  max-width: 80px;
-  max-height: 80px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 80px; 
-  z-index: 10;
-} */
-.discount-circle {
-  position: absolute;
-  top: 10%;                   /* higher placement */
-  left: 100%;
-  right: 10px;
-  margin-left: 20px;
-  transform: translateY(-50%);
-  background: #D4AF37;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  line-height: 80px; /* vertically center text inside */
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  /* z-index: 2; */
-}
-
 .offer-circle h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
@@ -717,6 +680,8 @@ header .container {
 .btn-offer:hover {
   background: #b8922c;
 }
+
+
 
 .discount-circle {
   position: absolute;
